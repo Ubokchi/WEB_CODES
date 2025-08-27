@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>While</title>
+</head>
+<body>
+   <h1>자바스크립트 while문</h1>
+   <div id="output"></div>
+
+    <script>
+        let i = 1;
+        while (i <= 10)  {
+            if (i % 2 == 0) {
+                output.innerHTML += i + '<br>';
+            }
+            i++;
+        }
+
+        for (i = 0; i < 7; i++) {
+            for (let j = 0; j < 7; j++) {
+                if (i == 0 || i == 6 || j == 0 || j == 6 || i == j || j == (6 - i)) {
+                    output.innerHTML += '*';
+                } else {
+                    output.innerHTML += '&nbsp;&nbsp;';
+                }
+
+            }
+            output.innerHTML += '<br>';
+        }
+    </script>
+
+</body>
+</html>

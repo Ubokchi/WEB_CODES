@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Variable</title>
+    </head>
+    <body>
+        <h1>자바스크립트 변수 선언과 사용</h1>
+        <div id="output"></div>
+
+        <script>
+            var output = document.getElementById('output');
+            console.log(output);
+            console.log(typeof output); // typeof : 데이터 타입 확인
+
+            // * 변수 초기화 방법
+            // - var 변수명 = 값;
+            // - var 변수명
+            //   변수명 = 값;
+
+            // * 변수 선언
+            // - var : 함수 범위의 변수 선언
+            // - let : 블록 범위의 변수 선언
+            // - const : 상수 정의
+
+            // * 자바스크립트의 변수 타입
+            // 1) 숫자(number) : 정수, 실수
+            // 2) 문자열(string) : 작은 따옴표(''), 큰 따옴표("")
+            // 3) 논리형(boolean) : true, false
+            // 4) 객체(object) : 요소(element), 데이터와 기능이 그룹화된 형태
+            // 5) null 타입
+            // 6) 함수(function)
+
+            let x = 123;
+            let y;
+            y = 456
+            let sum = x + y;
+            output.innerHTML += 'sum = ' + sum + '<br>';
+
+            // * 중요) 자바스크립트는 변수타입을 var나 let으로 통합
+            // x는 숫자 타입의 변수지만, 문자를 저장하면 문자 타입으로
+            // 자동 형 변환된다.
+            x = '안녕';
+            y = '자바스크립트';
+            sum = x + y;
+            output.innerHTML += 'sum = ' + sum + '<br>';
+        </script>
+    </body>
+</html>

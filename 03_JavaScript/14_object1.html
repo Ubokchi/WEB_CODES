@@ -1,0 +1,38 @@
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Object1</title>
+</head>
+<body>
+   <h1>자바스크립트 객체(object)</h1>
+   <div id="output"></div>
+   <script>
+        /*
+            * 자바스크립트 객체 표기법 :
+            {프로퍼티1: 값1, 프로퍼티2: 값2, ...}
+        */
+
+        let output = document.getElementById('output');
+
+        let person = {
+            name : '사자보이즈',
+            age : 500,
+            email : 'death@hell.com'
+        };
+
+        console.log(typeof person);
+        output.innerHTML += person.toString() + '<br>';
+        output.innerHTML += '이름: ' + person.name + '<br>';
+        output.innerHTML += '이름: ' + person['name'] + '<br>';
+        output.innerHTML += '나이: ' + person.age + '<br>';
+        output.innerHTML += '이메일: ' + person.email + '<br>';
+
+        // 권장하지 않는 객체 생성 방법
+        let person2 = new Object();
+        person2.name = '둘리';
+        person2.age = 100000;
+        person2.email = 'dooli@hoi.com';
+        
+   </script>
+</body>
+</html>
