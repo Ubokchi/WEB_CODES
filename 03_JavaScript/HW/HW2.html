@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HW2</title>
+</head>
+<body>
+    이름: <input id="name"><br>
+    연락처: <input id="phone"><br>
+    이메일: <input id="email"><br>
+    <br>
+    <button onclick="insert()">입력</button>
+    <button onclick="searchAll()">전체검색</button>
+    인덱스: <input id="index">
+    <button onclick="deleteContact()">삭제</button>
+    <hr>
+    <div id="output"></div>
+    <script>
+        let contacts = [];
+
+        function insert() {
+            let name = document.getElementById('name').value;
+            let phone = document.getElementById('phone').value;
+            let email = document.getElementById('email').value;
+
+            let contact = {
+                name: name,
+                phone: phone,
+                email: email
+            };
+
+            contacts.push(contact);
+            alert('입력 완료');
+
+            document.getElementById('name').value = '';
+            document.getElementById('phone').value = '';
+            document.getElementById('email').value = '';
+        }
+
+        function searchAll() {
+            let str = ''
+            
+            output.innerHTML = ''
+
+            for (let i = 0; i < contacts.length; i++) {
+                str = i + "번> 이름: " + contacts[i].name 
+                    + " | 전화번호: " + contacts[i].phone
+                    + " | 이메일: " + contacts[i].email;
+                
+                output.innerHTML += str + "<br>";
+            }
+        }
+
+        function deleteContact() {
+            let index = Number(document.getElementById('index').value);
+
+            if (!Number.isInteger(index)) {
+                alert('올바른 인덱스를 입력하세요.');
+            } else if (index >= contacts.length || index < 0) {
+                alert('해당 인덱스에 연락처가 없습니다.');
+            } else {
+                contacts.splice(index, 1);
+                alert('삭제 완료');
+            }
+
+            document.getElementById('index').value = '';
+        }
+    </script>
+</body>
+</html>
