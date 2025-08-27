@@ -35,12 +35,16 @@
             document.getElementById('name').value = '';
             document.getElementById('phone').value = '';
             document.getElementById('email').value = '';
+
+            searchAll();
         }
 
         function searchAll() {
             let str = ''
             
             output.innerHTML = ''
+
+            alert('전체 검색 완료');
 
             for (let i = 0; i < contacts.length; i++) {
                 str = i + "번> 이름: " + contacts[i].name 
@@ -64,6 +68,7 @@
             }
 
             document.getElementById('index').value = '';
+            searchAll();
         }
     </script>
 </body>
