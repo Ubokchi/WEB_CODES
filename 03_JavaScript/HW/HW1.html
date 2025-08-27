@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>HW1</title>
+</head>
+<body>
+    <input id="num1">
+    <input id="num2">
+    <button onclick="add()">더하기</button>
+    <button onclick="sub()">빼기</button>
+    <button onclick="multi()">곱하기</button>
+    <button onclick="div()">나누기</button>
+    <button onclick="clearOutput()">내용 초기화</button>
+    <div id="output"></div>
+    <script>
+        function add() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let result =  Number(num1) + Number(num2);
+
+            output.innerHTML += num1 + ' + ' + num2 + ' = ' + result + '<br>';
+        }
+
+        function sub() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let result =  Number(num1) - Number(num2);
+
+            output.innerHTML += num1 + ' - ' + num2 + ' = ' + result + '<br>';
+        }
+
+        function multi() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let result =  Number(num1) * Number(num2);
+
+            output.innerHTML += num1 + ' * ' + num2 + ' = ' + result + '<br>';
+        }
+
+        function div() {
+            let num1 = document.getElementById('num1').value;
+            let num2 = document.getElementById('num2').value;
+            let result =  Number(num1) / Number(num2);
+
+            output.innerHTML += num1 + ' / ' + num2 + ' = ' + result + '<br>';
+        }
+
+        function clearOutput() {
+            output.innerHTML = '';
+        }
+
+    </script>
+</body>
+</html>
