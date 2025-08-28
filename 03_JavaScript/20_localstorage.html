@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>LocalStorage 객체 저장 예제</title>
+</head>
+<body>
+  <h2>LocalStorage 객체 저장/불러오기</h2>
+  <button onclick="saveData()">저장</button>
+  <button onclick="loadData()">불러오기</button>
+    <script>
+        // 저장할 객체
+        const user = {
+            name: '홍길동',
+            age: 25,
+            email: 'hong#example.com'
+        };
+
+        // localStorage에 객체 저장
+        function saveData() {
+            const jsonString = JSON.stringify(user); // 객체를 -> JSON 문자열
+            localStorage.setItem('user', jsonString);
+            alert("저장되었습니다!");
+        }
+
+        // localStorage에서 객체 불러오기
+        function loadData() {
+            const data = localStorage.getItem('user');
+            if (data) {
+                const pasedUser = JSON.parse(data); // JSON 문자열 -> 객체
+                alert(`이름: ${pasedUser.name}, 나이: ${pasedUser.age}`);
+            } else {
+                alert("저장된 데이터가 없습니다.");
+            }
+        }
+    </script>
+</body>
+</html>
